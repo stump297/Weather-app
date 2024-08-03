@@ -25,8 +25,7 @@ function fetchAndDisplayWeather(cityValue) {
             daily,
           } = data;
           const { id } = data.current.weather[0];
-          // console.log(id);
-          console.log(data);
+
           const cityDate = new Date(dt * 1000).toLocaleDateString();
           const cityTitle = document.getElementById("weatherDisplay");
           const cityDisplay = document.createElement("h2");
@@ -78,12 +77,17 @@ function fetchAndDisplayWeather(cityValue) {
           }
         });
     });
-  document
-    .getElementById("srchbuttn")
-    .addEventListener("click", function (event) {
-      if (event.target.tagName === "BUTTON") {
-        const cityValue = event.target.textContent;
-        fetchAndDisplayWeather(cityValue);
-      }
-    });
+  input.addEventListener("click", function (event) {
+    event.preventDefault();
+    const cityValue = city.value.trim();
+    if (cityValue === "") {
+      alert("Please enter a city name");
+    } else if (!cityList.includes(cityValue)) {
+      cityList.push(cityValue);
+      localStorage.setItem("City", JSON.stringify(cityList));
+      displayCityButtons();
+      fetchAndDisplayWeather(cityValue);
+      cityName.value = "";
+    }
+  });
 }
