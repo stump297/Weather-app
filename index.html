@@ -2,24 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div id="weather-container">
-        <h2>Weather App</h2>
-        <input type="text" id="city" placeholder="Enter city">
-        <button onclick="getWeather()">Search</button>
-
-        <img id="weather-icon" alt="Weather Icon">
-
-        <div id="temp-div"></div>
-
-        <div id="weather-info"></div>
-
-        <div id="hourly-forecast"></div>
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8"/>
+            <link rel="stylesheet" href="./style.css"/>
+            <title>Weather Forcast </title>
+        </head>
+        <body>
+            <header>
+                <h1>Weather Forcast</h1>
+            </header>
+            <div class="box">
+            <div class="align">
+            <aside id="search">
+                <h2>Search For A City:</h2>
+                <input type="text" id="city" placeholder="Lansing"><br>
+                <button id="srchbttn" alt="search button">Search</button>
+                <br>
+                <div class="line"></div>
+               
+            </aside>
+            <div class="right">
+            <div id="weatherDisplay">
+            </div>
+            <div id="h3"><h3>5-Day Forecast:</h3></div>
+            <div id="FiveDayForecast"></div>
+        </div>
     </div>
- <script src="./index.js"></script> 
-</body>
-</html>
+        <footer>
+            Gumseat Productions &copy 2024
+        </footer>
+        <script src="index.js"></script>
+        </body>
+    </html>
