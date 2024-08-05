@@ -1,15 +1,15 @@
-const apiKey = "e5e0ae10ea57a4b5d58bfa3d3dfe819a";
+// const apiKey = "e5e0ae10ea57a4b5d58bfa3d3dfe819a";
 const city = document.getElementById("city");
-const input = document.getElementById("searchbtn");
+const input = document.getElementById("srchbttn");
 
 // Fetch and display weather data
-function fetchAndDisplayWeather(cityValue) {
+function fetchAndDisplayWeather(city) {
   const dataExist = document.getElementById("weatherDisplay");
   dataExist.innerHTML = "";
   const fiveDayExist = document.getElementById("FiveDayForecast");
   fiveDayExist.innerHTML = "";
-  const apiKey = "f63ca6bf62c5c8783f6c0a4d9033f7ec";
-  const geoCode = `https://api.openweathermap.org/geo/1.0/direct?q=${cityValue}&limit=1&appid=${apiKey}`;
+  const apiKey = "e5e0ae10ea57a4b5d58bfa3d3dfe819a";
+  const geoCode = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
 
   fetch(geoCode)
     .then((res) => res.json())
@@ -33,7 +33,7 @@ function fetchAndDisplayWeather(cityValue) {
           const cityWind = document.createElement("p");
           const cityHum = document.createElement("p");
 
-          cityDisplay.innerHTML = `${cityValue} ${cityDate} ${getEmoji(id)}`;
+          cityDisplay.innerHTML = `${cityValue} ${cityDate}`;
           cityTemp.innerHTML = `Temp: ${Math.round(temp * 1.8) + 32}\u00B0F`;
           cityWind.innerHTML = `Wind: ${wind_speed} mph`;
           cityHum.innerHTML = `Humidity: ${humidity}%`;
@@ -79,14 +79,13 @@ function fetchAndDisplayWeather(cityValue) {
     });
   input.addEventListener("click", function (event) {
     event.preventDefault();
-    const cityValue = city.value.trim();
-    if (cityValue === "") {
+    const city = city.value.trim();
+    if (city === "") {
       alert("Please enter a city name");
-    } else if (!cityList.includes(cityValue)) {
-      cityList.push(cityValue);
+    } else if (!cityList.includes(city)) {
+      cityList.push(city);
       localStorage.setItem("City", JSON.stringify(cityList));
-      displayCityButtons();
-      fetchAndDisplayWeather(cityValue);
+      fetchAndDisplayWeather(city);
       cityName.value = "";
     }
   });
