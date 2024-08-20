@@ -1,6 +1,7 @@
 // const apiKey = "e5e0ae10ea57a4b5d58bfa3d3dfe819a";
-const city = document.getElementById("city");
-const input = document.getElementById("srchbttn");
+const cityInput = document.getElementById("city");
+const inputButton = document.getElementById("srchbttn");
+const cityList = JSON.parse(localStorage.getItem("City")) || [];
 
 // Fetch and display weather data
 function fetchAndDisplayWeather(city) {
@@ -33,7 +34,7 @@ function fetchAndDisplayWeather(city) {
           const cityWind = document.createElement("p");
           const cityHum = document.createElement("p");
 
-          cityDisplay.innerHTML = `${cityValue} ${cityDate}`;
+          cityDisplay.innerHTML = `${city} ${cityDate}`;
           cityTemp.innerHTML = `Temp: ${Math.round(temp * 1.8) + 32}\u00B0F`;
           cityWind.innerHTML = `Wind: ${wind_speed} mph`;
           cityHum.innerHTML = `Humidity: ${humidity}%`;
@@ -77,16 +78,17 @@ function fetchAndDisplayWeather(city) {
           }
         });
     });
-  input.addEventListener("click", function (event) {
-    event.preventDefault();
-    const city = city.value.trim();
-    if (city === "") {
-      alert("Please enter a city name");
-    } else if (!cityList.includes(city)) {
-      cityList.push(city);
-      localStorage.setItem("City", JSON.stringify(cityList));
-      fetchAndDisplayWeather(city);
-      cityName.value = "";
-    }
-  });
 }
+
+inputButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const city = cityInput.value.trim();
+  if (city === "") {
+    alert("Please enter a city name");
+  } else if (!cityList.includes(city)) {
+    cityList.push(city);
+    localStorage.setItem("City", JSON.stringify(cityList));
+    fetchAndDisplayWeather(city);
+    cityInput.value = "";
+  }
+});
