@@ -59,9 +59,7 @@ function fetchAndDisplayWeather(city) {
             const fiveDayWind = document.createElement("p");
             const fiveDayHum = document.createElement("p");
 
-            fiveDayDisplay.innerHTML = `${forecastDate} ${getEmoji(
-              forecastEmoji
-            )}`;
+            fiveDayDisplay.innerHTML = `${forecastDate}`;
 
             fiveDayTemp.innerHTML = `Temp: ${
               Math.round(forecastTemp * 1.8) + 32
