@@ -1,4 +1,4 @@
-// const apiKey = "e5e0ae10ea57a4b5d58bfa3d3dfe819a";
+const apiKey = "e70acb7695bda46605fbd933eba249ac6";
 const cityInput = document.getElementById("city");
 const inputButton = document.getElementById("srchbttn");
 const cityList = JSON.parse(localStorage.getItem("City")) || [];
@@ -10,7 +10,7 @@ function fetchAndDisplayWeather(city) {
   const fiveDayExist = document.getElementById("FiveDayForecast");
   fiveDayExist.innerHTML = "";
   const apiKey = "e70acb7695bda46605fbd933eba249ac6";
-  const geoCode = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit={limit}&appid=${apiKey}`;
+  const geoCode = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
   fetch(geoCode)
     .then((res) => res.json())
