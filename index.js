@@ -9,14 +9,14 @@ function fetchAndDisplayWeather(city) {
   dataExist.innerHTML = "";
   const fiveDayExist = document.getElementById("FiveDayForecast");
   fiveDayExist.innerHTML = "";
-  const apiKey = "e5e0ae10ea57a4b5d58bfa3d3dfe819a";
-  const geoCode = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
+  const apiKey = "e70acb7695bda46605fbd933eba249ac6";
+  const geoCode = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit={limit}&appid=${apiKey}`;
 
   fetch(geoCode)
     .then((res) => res.json())
     .then((data) => {
       const [{ lat, lon }] = data;
-      const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
       fetch(apiUrl)
         .then((res) => res.json())
