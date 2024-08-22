@@ -18,3 +18,15 @@ This Weather Forecast App allows users to search for the current weather and a 5
 - CSS
 - JavaScript
 - OpenWeatherMap API
+
+## Usage
+
+1. Enter the name of the city in the input field.
+2. Click the "Search" button.
+3. The current weather conditions and 5 day forecast will be displayed.
+
+## Link
+
+## Author
+
+If you have any questions or would like to see more please vist my reop at https://github.com/stump297

@@ -1,48 +1,90 @@
-body {
-    background: #495358;
+* {
+    list-style: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/* text */
+#text-two {
+    color:black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* body */
+header {
+    height: 75px;
+    background-image: linear-gradient(to right, rgb(93, 93, 216) , rgb(27, 27, 101));
+    color: white;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    height: 100vh;
-    margin: 0;
+    justify-content: center;
 }
 
+label {
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+} 
 
 
-h2, label, p {
-    color: #fff;
-    margin: 8px 0;
+/* city selected box */
+.city-card {
+    border-style: solid;
+    margin: 20px;
 }
 
-input {
-    width: calc(100% - 16px);
-    padding: 8px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    border: 1px solid white;
-    margin-top: 20px;
+/* city selected info lists*/
+li {
+    margin-bottom: 20px;
 }
 
-button {
-    background: #e0d089;
+#city-info {
+    padding-left: 5px;
+}
+
+/* 5-day forecast */
+.card-container {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: rgb(27, 27, 101);
     color: white;
-    padding: 10px;
+    display: inline-block;
+    margin: 10px;
+    max-width: 150px;
+    text-align: center;
+}
+
+.card > li {
+    text-align: center;
+}
+
+/* buttons */
+#button-one {
+    width: 100%;
+    background-color: rgb(84, 84, 238);
+}
+
+hr {
+    border-width: 2px;
+    background-color: rgb(102, 93, 125);
+}
+
+#searched-cities > button {
+    width: 15%;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100px;
-    font-size: 15px;
-}
-
-button:hover {
-    background: #e6e5be;
-}
-
-
-
-header {
-  align-items: start;
-  
+    background-color: rgb(191, 191, 191);
 }
